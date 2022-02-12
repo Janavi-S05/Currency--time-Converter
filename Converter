@@ -1,0 +1,96 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        CurrencyConverter currencyConverter = new CurrencyConverter();
+        TimeConverter timeConverter = new TimeConverter();
+        int t = sc.nextInt();
+        while(t-- > 0){
+            int option = sc.nextInt();
+            double fromVal = sc.nextDouble();
+            double toVal = 0;
+            switch(option){
+                case 1:toVal = currencyConverter.dollarToRupee(fromVal);
+                       break;
+                case 2:toVal = currencyConverter.rupeeToDollar(fromVal);
+                       break;
+                case 3:toVal = currencyConverter.euroToRupee(fromVal);
+                    break;
+                case 4:
+                    toVal = currencyConverter.rupeeToEuro(fromVal);
+                    break;
+                case 5:
+                    toVal = currencyConverter.yenToRupee(fromVal);
+                    break;
+                case 6:
+                    toVal = currencyConverter.rupeeToYen(fromVal);
+                    break;
+                case 7:
+                    toVal = timeConverter.hourToMinute(fromVal);
+                    break;
+                case 8:
+                    toVal = timeConverter.hourToSecond(fromVal);
+                    break;
+                case 9:
+                    toVal = timeConverter.secondToHour(fromVal);
+                    break;
+                case 10:
+                    toVal = timeConverter.minuteToHour(fromVal);
+                    break;
+            }
+            System.out.println(toVal);
+        }
+
+    }
+}
+
+# converting dollar-rupee, euro-rupee and yen-rupee vice versa
+public class CurrencyConverter
+{
+   public static double dollarToRupee(double fromVal) 
+   {
+       return fromVal*69.00;
+   }
+   public static double rupeeToDollar(double fromVal)
+   {
+       return fromVal/69.00;
+   }
+   public static double euroToRupee(double fromVal)
+   {
+      return fromVal*78.00; 
+   }
+   public static double rupeeToEuro(double fromVal)
+   {
+       return fromVal/78.00;
+   }
+   public static double yenToRupee(double fromVal)
+   {
+       return fromVal*0.64;
+   }
+   public static double rupeeToYen(double fromVal)
+   {
+       return fromVal*1.5625;
+   }
+}
+
+# converting hour-Minute and hour-Second vice versa
+public class TimeConverter
+{
+public static double hourToMinute(double fromVal)
+{
+    return fromVal*60.00;
+}
+public static double hourToSecond(double fromVal)
+{
+    return fromVal*3600.00;
+}
+public static double secondToHour(double fromVal)
+{
+    return fromVal/3600.00;
+}
+public static double minuteToHour(double fromVal)
+{
+    return fromVal/60.00;
+}
+}
